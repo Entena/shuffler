@@ -1,0 +1,29 @@
+<project name="music_shuffler" default="package" basedir=".">
+  
+	<target name="clean" description="Cleans Release Dirs">
+  	<delete dir="bin" />
+  	<delete dir="deploy" />
+  </target>
+	
+	<target name="compile" depends="clean" description="Creates class files">
+	  <mkdir dir="bin/"/>
+	   <javac srcdir="src/music_shuffler" 
+	   	 destdir="bin/" 
+	   	 debug="true" 
+	   	 debuglevel="lines,vars,source">
+	   </javac>	   
+  </target>
+
+	<target name="package" depends="compile" description="Builds jar">
+		<mkdir dir="deploy" />
+		<jar destfile="deploy/music_shuffler.jar"
+	   basedir="bin/"
+	   includes="**/*.class">
+			<manifest>
+			 <attribute name="Main-Class" value="music_shuffler.Main" />
+			</manifest>
+		</jar>
+		<copy file="config" tofile="deploy/config"/>
+	</target>
+	
+	</project>	  
