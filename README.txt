@@ -12,3 +12,5 @@ java -jar music_shuffler.jar -src (your music folder) -size (size in GB) -destFo
 Note that there is a config folder in the root of the folder. Inside this config file you can put keywords of tracks you want to ignore i.e. "Beatles".
 
 Have fun recode or redistribute if you want just don't claim it as your own.
+
+
